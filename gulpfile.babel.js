@@ -26,7 +26,7 @@ function styles(){
 
 function watchFiles() {
     gulp.watch(paths.styles.watch, styles);
-  }
+}
 
 const dev = gulp.series([styles, watchFiles]);
 
