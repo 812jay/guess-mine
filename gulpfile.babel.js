@@ -21,7 +21,7 @@ const paths = {
     }
 }
 
-const clean = () => del("src/static");
+const clean = () => del(["src/static"]);
 
 const styles = () =>
   gulp
@@ -29,29 +29,32 @@ const styles = () =>
     .pipe(sass())
     .pipe(autoprefixer({
         cascade: false
-    }))
+      })
+    )
     .pipe(minifyCSS())
     .pipe(gulp.dest(paths.styles.dest));
 
-const js = () => 
+const js = () =>
   gulp
     .src(paths.js.src)
-    .pipe(bro({
-      transform:[
-        babel.configure({
-          presets: ["@babel/preset-env"]
-        })
-      ]
-    }))
+    .pipe(
+      bro({
+        transform:[
+          babel.configure({
+            presets: ["@babel/preset-env"]
+          })
+        ]
+      })
+    )
     .pipe(gulp.dest(paths.js.dest));
 
 const watchFiles = () => {
   gulp.watch(paths.styles.watch, styles);
   gulp.watch(paths.js.watch, js);  
-}
+};
 
 const dev = gulp.series(clean, styles, js, watchFiles);
 
-export const build = gulp.styles(clean, styles, js);
+export const build = gulp.series(clean, styles, js);
 
 export default dev;
