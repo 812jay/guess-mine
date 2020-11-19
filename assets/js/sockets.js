@@ -1,7 +1,7 @@
 import { handleNewUser, handleDisconnected } from "./notifications";
 import { handleNewMessage } from "./chat";
 import { handleBeganPath, handleStrokedPath, handleFilled } from "./paint";
-import { handlePlayerUpdate } from "./player";
+import { handlePlayerUpdate } from "./players";
 
 let socket = null;
 
