@@ -77,7 +77,7 @@ const handleModeClick = () => {
 
 const fill = (color = null) => {
   let currentColor = ctx.fillStyle;
-  console.log(currentColor);
+  console.log(color);
   if (color !== null) {
     ctx.fillStyle = color;
   }
