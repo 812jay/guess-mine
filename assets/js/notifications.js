@@ -9,7 +9,7 @@ const fireNotification = (text, color) => {
   body.appendChild(notification);
   setTimeout(() => {
     body.removeChild(notification);
-  }, 2000);
+  }, 3000);
 };
 
 export const handleNewUser = ({ nickname }) =>
