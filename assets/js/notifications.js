@@ -5,7 +5,11 @@ const fireNotification = (text, color) => {
   notification.innerText = text;
   notification.style.background = color;
   notification.className = "notification";
+
   body.appendChild(notification);
+  setTimeout(() => {
+    body.removeChild(notification);
+  }, 2000);
 };
 
 export const handleNewUser = ({ nickname }) =>
