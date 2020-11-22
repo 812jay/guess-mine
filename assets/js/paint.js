@@ -7,7 +7,7 @@ const colors = document.getElementsByClassName("jsColor");
 const mode = document.getElementById("jsMode");
 
 const INITIAL_COLOR = "#2c2c2c";
-const CANVAS_SIZE = 700;
+const CANVAS_SIZE = 400;
 
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
@@ -124,9 +124,9 @@ export const enableCanvas = () => {
   canvas.addEventListener("click", handleCanvasClick);
 };
 
-export const hideControls = () => (controls.style.opacity = 0);
+export const hideControls = () => (controls.style.display = "none");
 
-export const showControls = () => (controls.style.opacity = 1);
+export const showControls = () => (controls.style.display = "flex");
 
 export const resetCanvas = () => fill("#fff");
 
